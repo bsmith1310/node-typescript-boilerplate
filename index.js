@@ -4,7 +4,11 @@ let MediaUtil = require('./build/src/MediaUtil').default;
 
 console.log('hi');
 
-var path = './media-server/media';
+var myArgs = process.argv.slice(2);
+
+const TEST_DATA_PATH = './media-server/media';
+
+var path = myArgs.length > 0 ? myArgs[0] : TEST_DATA_PATH;
 
 MediaUtil.GetMediaSource(path).then(function (result) {
   let toStringify = { sourceTextureJsons: result.sourceFiles }
