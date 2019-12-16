@@ -40,7 +40,7 @@ class MediaUtil {
 
     var walk = function (rootdir:string, dir:string) {
       var results = [];
-      if (dir.indexOf("$Recycle.Bin") === -1) {
+      if (dir.indexOf("$Recycle.Bin") === -1 && dir.indexOf("_cache") === -1) {
         var fulldir = rootdir + '/' + dir;
         var list = fs.readdirSync(fulldir);
         list.forEach(function (file) {
