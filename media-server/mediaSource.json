@@ -1,0 +1,22 @@
+[
+  {
+    "url": "mexico_test_data/2019-10-01_from-sam/20190203_105152.tn.jpg",
+    "width": 299,
+    "height": 531
+  },
+  {
+    "url": "mexico_test_data/2019-10-01_from-sam/20190204_173822.tn.jpg",
+    "width": 299,
+    "height": 531
+  },
+  {
+    "url": "mexico_test_data/2019-10-19_21-09-22/DCIM/100MSDCF/DSC02423.tn.jpg",
+    "width": 547,
+    "height": 365
+  },
+  {
+    "url": "mexico_test_data/2019-10-19_21-09-22/DCIM/100MSDCF/DSC02658.tn.jpg",
+    "width": 547,
+    "height": 365
+  }
+]
