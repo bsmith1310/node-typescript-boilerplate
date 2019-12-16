@@ -11,7 +11,7 @@ class MediaUtil {
 
   public static GetMediaSource(path:string): Promise<MediaSource> {
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
 
     // This is a simple NodeJS app meant to be deployed to the VM that is using IIS to host the
     // media as static content. This app does not do the hosting, just builds a JSON file
@@ -26,7 +26,7 @@ class MediaUtil {
     // Long term, this will be a full-fledged DAM/media server that hopefully runs in a serverless
     // fashion, with a very highly scalable and fault-tollerant architecture.
 
-    const mediafiletypes = ['jpg', 'png'];
+    // const mediafiletypes = ['jpg', 'png'];
 
     // For getting arg from command line:
     // if (process.argv.length <= 2) {
@@ -38,7 +38,7 @@ class MediaUtil {
     // var path = `C:\\_GIT\\microservice-skeleton\\src\\frontend\\test_data`;
     // var path = `..\\..\\test_data`;
 
-    var walk = function (rootdir, dir) {
+    var walk = function (rootdir:string, dir:string) {
       var results = [];
       if (dir.indexOf("$Recycle.Bin") === -1) {
         var fulldir = rootdir + '/' + dir;
