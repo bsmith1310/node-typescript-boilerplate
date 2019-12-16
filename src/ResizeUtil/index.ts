@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import * as fs from 'fs';
 
 import * as sharp from 'sharp';
@@ -10,13 +8,14 @@ import FileInfo from '../MediaUtil/models/FileInfo';
 
 class ResizeUtil {
 
-  public static GenerateDzi(mediaPath: string, mediaSource: MediaSource): Promise<null> {
-    return new Promise((resolve, reject) => {
-      this.GenerateDziForImage(mediaPath, mediaSource.sourceFiles[0]);
+  public static generateDzi(mediaPath: string, mediaSource: MediaSource): Promise<null> {
+    return new Promise((resolve) => {
+      this.generateDziForImage(mediaPath, mediaSource.sourceFiles[0]);
+      resolve(null);
     });
   }
 
-  private static GenerateDziForImage(mediaPath:string, sourceFileInfo:FileInfo) {
+  private static generateDziForImage(mediaPath:string, sourceFileInfo:FileInfo) {
     let outputPathParent = MediaUrlUtils.GetCacheFsPathAbsolute(mediaPath, sourceFileInfo.url);
     try {
       fs.mkdirSync(outputPathParent, {recursive:true});
@@ -36,7 +35,7 @@ class ResizeUtil {
       .tile({
         size: 512
       })
-      .toFile(outputPath + '\\dzi', function (err, info) {
+      .toFile(outputPath + '\\dzi', function (/*err, info*/) {
         // output.dzi is the Deep Zoom XML definition
         // output_files contains 512x512 tiles grouped by zoom level
         debugger;
@@ -44,12 +43,12 @@ class ResizeUtil {
     console.log('TODO - GenerateDzi');
   }
 
-  public static GenerateThumbnails(mediaPath: string, mediaSource: MediaSource): Promise<null> {
-    return new Promise((resolve, reject) => {
+  public static generateThumbnails(mediaPath: string, mediaSource: MediaSource): Promise<null> {
+    return new Promise((/*resolve, reject*/) => {
 
       // NOTE: Likely don't need this? DZI should be all that is needed.
 
-      console.log('TODO - GenerateThumbnails');
+      console.log(`TODO - GenerateThumbnails, mediaPath:${mediaPath}, mediaSource.sourceFiles.length:${mediaSource.sourceFiles.length}`);
     });
   }
 }
