@@ -10,6 +10,7 @@ import FileInfo from '../MediaUtil/models/FileInfo';
 class ResizeUtil {
 
   public static generateDzi(mediaPath: string, mediaSource: MediaSource): Promise<null> {
+    console.log('generateDzi');
     return new Promise((resolve) => {
       for (let ix = 0; ix < mediaSource.sourceFiles.length; ix++) {
         const sourceFile = mediaSource.sourceFiles[ix];
