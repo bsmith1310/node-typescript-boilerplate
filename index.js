@@ -7,7 +7,7 @@ console.log('hi');
 
 var myArgs = process.argv.slice(2);
 
-const TEST_DATA_PATH = './media-server/media';
+const TEST_DATA_PATH = './_test_data';
 
 var path = myArgs.length > 0 ? myArgs[0] : TEST_DATA_PATH;
 
