@@ -20,7 +20,7 @@ class ResizeUtil {
   }
 
   private static generateDziForImage(mediaPath: string, sourceFileInfo: FileInfo) {
-    let outputPath = MediaUrlUtils.GetCachItemFsPathAbsolute(mediaPath, sourceFileInfo.url, 'dzi');
+    let outputPath = MediaUrlUtils.GetCacheItemFsPathAbsolute(mediaPath, sourceFileInfo.url, 'dzi');
     mkdirp(outputPath, function (err) {
       if (err) {
         console.error(err)
@@ -32,7 +32,7 @@ class ResizeUtil {
         } catch (e) {
           console.log(`failed to create dir: ${outputPathParent}`);
         }
-        let outputPath = MediaUrlUtils.GetCachItemFsPathAbsolute(mediaPath, sourceFileInfo.url, 'dzi');
+        let outputPath = MediaUrlUtils.GetCacheItemFsPathAbsolute(mediaPath, sourceFileInfo.url, 'dzi');
         try {
           fs.mkdirSync(outputPath, { recursive: true });
           console.log(`created dir: ${outputPath}`);

@@ -2,6 +2,7 @@
 
 class MediaUrlUtils {
 
+  private static CacheDir = '_cache';
   private static UrlSeparator = '/';
   private static FsSeparator = '\\';
 
@@ -14,11 +15,11 @@ class MediaUrlUtils {
     return parts.length > 1 ? parts[parts.length-1] : '';
   }
   public static GetCacheFsPathAbsolute(basePath:string, url:string):string {
-    let absolute = basePath + this.FsSeparator + this.GetFsPathRelative(url) + this.FsSeparator + this.GetBaseName(url);
+    let absolute = basePath + this.FsSeparator + this.CacheDir + this.FsSeparator + this.GetFsPathRelative(url) + this.FsSeparator + this.GetBaseName(url);
     return replaceAll(absolute, this.FsSeparator + this.FsSeparator, this.FsSeparator);
   }
-  public static GetCachItemFsPathAbsolute(basePath:string, url:string, itemKey:string):string {
-    let absolute = basePath + this.FsSeparator + this.GetFsPathRelative(url) + this.FsSeparator + this.GetBaseName(url) + this.FsSeparator + itemKey;
+  public static GetCacheItemFsPathAbsolute(basePath:string, url:string, itemKey:string):string {
+    let absolute = basePath + this.FsSeparator + this.CacheDir + this.FsSeparator + this.GetFsPathRelative(url) + this.FsSeparator + this.GetBaseName(url) + this.FsSeparator + itemKey;
     return replaceAll(absolute, this.FsSeparator + this.FsSeparator, this.FsSeparator);
   }
   public static GetFsPathRelative(url:string):string {
