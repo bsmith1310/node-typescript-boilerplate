@@ -27,11 +27,11 @@ MediaUtil.GetMediaSource(path).then(function (result) {
   let toStringify = { sourceTextureJsons: result.sourceFiles }
 
   if (generateDzi) {
-    ResizeUtil.GenerateDzi(result);
+    ResizeUtil.GenerateDzi(path, result);
   }
 
   if (generateThumbnails) {
-    ResizeUtil.GenerateThumbnails(result);
+    ResizeUtil.GenerateThumbnails(path, result);
   }
 
   fs.writeFile(`${path}/sourceMedia.json`, JSON.stringify(toStringify, null, 2), (err) => {
