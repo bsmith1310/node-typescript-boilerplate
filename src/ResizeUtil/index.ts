@@ -28,13 +28,13 @@ class ResizeUtil {
         let outputPathParent = MediaUrlUtils.GetCacheFsPathAbsolute(mediaPath, sourceFileInfo.url);
         let filePath = MediaUrlUtils.GetFsFullPathAbsolute(mediaPath, sourceFileInfo.url);
         sharp(filePath)
+          .jpeg({
+            quality: 90,
+            chromaSubsampling: '4:4:4'
+          }) 
           .tile({
             size: 512
-          })
-          // .jpeg({
-          //   quality: 100,
-          //   chromaSubsampling: '4:4:4'
-          // })        
+          })       
           .toFile(outputPath + '\\dzi', function (/*err, info*/) {
             // output.dzi is the Deep Zoom XML definition
             // output_files contains 512x512 tiles grouped by zoom level
