@@ -1,4 +1,5 @@
 let greeter = require('./build/src/main');
+let MediaUtil = require('./build/src/MediaUtil');
 
 console.log('hi');
 
