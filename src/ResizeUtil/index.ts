@@ -11,7 +11,10 @@ class ResizeUtil {
 
   public static generateDzi(mediaPath: string, mediaSource: MediaSource): Promise<null> {
     return new Promise((resolve) => {
-      this.generateDziForImage(mediaPath, mediaSource.sourceFiles[0]);
+      for (let ix = 0; ix < mediaSource.sourceFiles.length; ix++) {
+        const sourceFile = mediaSource.sourceFiles[ix];
+        this.generateDziForImage(mediaPath, sourceFile);
+      }
       resolve(null);
     });
   }
