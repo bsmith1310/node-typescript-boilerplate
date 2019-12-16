@@ -26,24 +26,15 @@ class ResizeUtil {
         console.error(err)
       } else {
         let outputPathParent = MediaUrlUtils.GetCacheFsPathAbsolute(mediaPath, sourceFileInfo.url);
-        try {
-          fs.mkdirSync(outputPathParent, { recursive: true });
-          console.log(`created dir: ${outputPathParent}`);
-        } catch (e) {
-          console.log(`failed to create dir: ${outputPathParent}`);
-        }
-        let outputPath = MediaUrlUtils.GetCacheItemFsPathAbsolute(mediaPath, sourceFileInfo.url, 'dzi');
-        try {
-          fs.mkdirSync(outputPath, { recursive: true });
-          console.log(`created dir: ${outputPath}`);
-        } catch (e) {
-          console.log(`failed to create dir: ${outputPath}`);
-        }
         let filePath = MediaUrlUtils.GetFsFullPathAbsolute(mediaPath, sourceFileInfo.url);
         sharp(filePath)
           .tile({
             size: 512
           })
+          // .jpeg({
+          //   quality: 100,
+          //   chromaSubsampling: '4:4:4'
+          // })        
           .toFile(outputPath + '\\dzi', function (/*err, info*/) {
             // output.dzi is the Deep Zoom XML definition
             // output_files contains 512x512 tiles grouped by zoom level
