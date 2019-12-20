@@ -20,6 +20,26 @@ node index.js ./_test_data dzi tn
 
 To debug, use the `Launch Program` configuration in VS. It is necessary to create a production build because that is what it debugs.
 
+To deploy and run on Windows VM server:
+
+In git bash:
+
+If not already done:
+
+```
+cd /c/_git
+git clone https://github.com/bsmith1310/node-typescript-boilerplate.git
+```
+
+Once/if already cloned:
+
+```
+cd /c/_git/node-typescript-boilerplate
+git pull
+npm run build
+node index.js C:\\_media\\media dzi tn
+```
+
 # DOC FROM ORIGINAL REPO BELOW:
 
 [![TypeScript version][ts-badge]][typescript-37]
