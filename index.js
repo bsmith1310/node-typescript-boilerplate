@@ -11,8 +11,8 @@ const TEST_DATA_PATH = './_test_data';
 
 var path = myArgs.length > 0 ? myArgs[0] : TEST_DATA_PATH;
 
-let generateDzi = false;
-let generateThumbnails = false;
+let generateDzi = true;
+let generateThumbnails = true;
 
 for (let ix = 1; ix < myArgs.length; ix++) {
   const arg = myArgs[ix];

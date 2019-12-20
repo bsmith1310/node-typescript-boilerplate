@@ -1,5 +1,27 @@
 # Starter Project V1
 
+To create a production build (the only build currently supported?):
+
+```
+npm run build
+```
+
+To run against test data with default options:
+
+```
+node index.js
+```
+
+To run against test data with `dzi` and `tn` generation`:
+
+```
+node index.js ./_test_data dzi tn
+```
+
+To debug, use the `Launch Program` configuration in VS. It is necessary to create a production build because that is what it debugs.
+
+# DOC FROM ORIGINAL REPO BELOW:
+
 [![TypeScript version][ts-badge]][typescript-37]
 [![Node.js version][nodejs-badge]][nodejs]
 [![APLv2][license-badge]][LICENSE]
