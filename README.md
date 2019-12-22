@@ -40,6 +40,10 @@ npm run build
 node index.js C:\\_media\\media dzi tn
 ```
 
+## To FTP in to Azure VM Media Server
+
+https://github.com/bsmith1310/md-svr
+
 # DOC FROM ORIGINAL REPO BELOW:
 
 [![TypeScript version][ts-badge]][typescript-37]
