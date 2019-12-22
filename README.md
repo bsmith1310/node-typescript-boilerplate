@@ -20,7 +20,7 @@ node index.js ./_test_data dzi tn
 
 To debug, use the `Launch Program` configuration in VS. It is necessary to create a production build because that is what it debugs.
 
-To deploy and run on Windows VM server:
+## To deploy and run on Windows VM server:
 
 In git bash:
 
