@@ -43,14 +43,16 @@ class ResizeUtil {
           .jpeg({
             quality: 90,
             chromaSubsampling: '4:4:4'
-          }) 
+          })
           .tile({
             size: 512
-          })       
-          .toFile(outputPath + '\\dzi', function (/*err, info*/) {
+          })
+          .toFile(outputPath + '\\dzi', function (err, info) {
             // output.dzi is the Deep Zoom XML definition
             // output_files contains 512x512 tiles grouped by zoom level
-            debugger;
+            if (err) {
+              debugger;
+            }
           });
       }
     });
@@ -67,11 +69,14 @@ class ResizeUtil {
         sharp(filePath)
           .resize(512, 512, {
             kernel: sharp.kernel.nearest,
-            // fit: 'inside',
+            fit: 'inside',
           })
           .toFile(outputPath + '\\tn_512.jpg', function (err, info) {
             // output.dzi is the Deep Zoom XML definition
             // output_files contains 512x512 tiles grouped by zoom level
+            if (err) {
+              debugger;
+            }
             console.log(`TN toFile`);
             console.log(`err`);
             console.log(JSON.stringify(err));
