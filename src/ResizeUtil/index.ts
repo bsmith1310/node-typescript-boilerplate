@@ -67,7 +67,7 @@ class ResizeUtil {
         sharp(filePath)
           .resize(512, 512, {
             kernel: sharp.kernel.nearest,
-            fit: 'inside',
+            // fit: 'inside',
           })
           .toFile(outputPath + '\\tn_512.jpg', function (err, info) {
             // output.dzi is the Deep Zoom XML definition
