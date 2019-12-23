@@ -69,10 +69,14 @@ class ResizeUtil {
             kernel: sharp.kernel.nearest,
             fit: 'inside',
           })
-          .toFile(outputPath + '\\tn_512.jpg', function (/*err, info*/) {
+          .toFile(outputPath + '\\tn_512.jpg', function (err, info) {
             // output.dzi is the Deep Zoom XML definition
             // output_files contains 512x512 tiles grouped by zoom level
-            debugger;
+            console.log(`TN toFile`);
+            console.log(`err`);
+            console.log(JSON.stringify(err));
+            console.log(`info`);
+            console.log(JSON.stringify(info));
           });
         // sharp(filePath)
         //   .resize(512, 512)
