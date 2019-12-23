@@ -39,7 +39,7 @@ class ResizeUtil {
       } else {
         let outputPathParent = MediaUrlUtils.GetCacheFsPathAbsolute(mediaPath, sourceFileInfo.url);
         let filePath = MediaUrlUtils.GetFsFullPathAbsolute(mediaPath, sourceFileInfo.url);
-        sharp(filePath)
+        sharp(filePath, { failOnError: false })
           .jpeg({
             quality: 90,
             chromaSubsampling: '4:4:4'
@@ -66,7 +66,7 @@ class ResizeUtil {
       } else {
         // let outputPathParent = MediaUrlUtils.GetCacheFsPathAbsolute(mediaPath, sourceFileInfo.url);
         let filePath = MediaUrlUtils.GetFsFullPathAbsolute(mediaPath, sourceFileInfo.url);
-        sharp(filePath)
+        sharp(filePath, { failOnError: false })
           .resize(512, 512, {
             kernel: sharp.kernel.nearest,
             fit: 'inside',
