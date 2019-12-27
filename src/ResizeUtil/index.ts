@@ -31,6 +31,13 @@ class ResizeUtil {
     });
   }
 
+  /**
+   * Alternative to using Sharp JS library for DZI generation: ImageTool.exe
+   * 
+   * "ImageTool.exe is a handy command line tool for creating Deep Zoom images and for finding out more about their structure.
+   * You find it in your Deep Zoom Composer installation folder among other tools such as SparseImageTool.exe for creating Deep Zoom collections."
+   *   -https://www.gasi.ch/blog/inside-deep-zoom-2
+   */
   private static generateDziForImage(mediaPath: string, sourceFileInfo: FileInfo) {
     let outputPath = MediaUrlUtils.GetCacheItemFsPathAbsolute(mediaPath, sourceFileInfo.url, 'dzi');
     mkdirp(outputPath, function (err) {
